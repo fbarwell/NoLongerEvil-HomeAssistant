@@ -7,6 +7,7 @@ RUN apk add --no-cache python3 py3-pip git
 
 # Build Python server
 WORKDIR /server
+# Cache bust: Gen2 v3 timestamp acknowledgement test 0.0.9
 #COPY server/pyproject.toml server/README.md ./
 #COPY server/src ./src
 RUN git clone --depth 1 --branch gen2-v3-compat https://github.com/fbarwell/NoLongerEvil-SelfHosted.git . \

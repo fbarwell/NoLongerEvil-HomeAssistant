@@ -2,7 +2,7 @@
 name: "NoLongerEvil Gen2 V3 Patched (by Fred)"
 description: "NLE Nest API - Self-hosted Nest thermostat control"
 url: "https://github.com/fbarwell/NoLongerEvil-HomeAssistant"
-version: "0.0.9"
+version: "0.0.10"
 slug: "nolongerevil_gen2v3"
 init: false
 hassio_api: true

@@ -9,8 +9,8 @@ RUN apk add --no-cache python3 py3-pip git
 WORKDIR /server
 #COPY server/pyproject.toml server/README.md ./
 #COPY server/src ./src
-RUN git clone --depth 1 --branch gen2-v3-compat https://github.com/fbarwell/NoLongerEvil-SelfHosted.git .
-RUN pip3 install --no-cache-dir --break-system-packages .
+RUN git clone --depth 1 --branch gen2-v3-compat https://github.com/fbarwell/NoLongerEvil-SelfHosted.git . \
+    && pip3 install --no-cache-dir --break-system-packages .
 
 # Copy run script and set up data directory
 COPY run.sh /

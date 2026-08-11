@@ -5,6 +5,7 @@ name: Build
   push:
     branches:
       - main
+      - gen2-v3-compat
   pull_request:
     branches:
       - main

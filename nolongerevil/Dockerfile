@@ -12,7 +12,7 @@ RUN echo "NLE cache bust: $NLE_CACHE_BUST"
 # Cache bust: Gen2 v3 timestamp acknowledgement test 0.0.9
 #COPY server/pyproject.toml server/README.md ./
 #COPY server/src ./src
-RUN git clone --depth 1 --branch gen2-v3-compat https://github.com/fbarwell/NoLongerEvil-SelfHosted.git . \
+RUN git clone --depth 1 --branch main https://github.com/fbarwell/NoLongerEvil-SelfHosted.git . \
     && pip3 install --no-cache-dir --break-system-packages .
 
 # Copy run script and set up data directory

@@ -7,7 +7,7 @@ RUN apk add --no-cache python3 py3-pip git
 
 # Build Python server
 WORKDIR /server
-ARG NLE_CACHE_BUST=20260811-1
+ARG NLE_CACHE_BUST=20260813-1
 RUN echo "NLE cache bust: $NLE_CACHE_BUST"
 # Cache bust: Gen2 v3 timestamp acknowledgement test 0.0.9
 #COPY server/pyproject.toml server/README.md ./

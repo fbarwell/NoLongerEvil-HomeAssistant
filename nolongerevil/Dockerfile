@@ -7,12 +7,12 @@ RUN apk add --no-cache python3 py3-pip git
 
 # Build Python server
 WORKDIR /server
-ARG NLE_CACHE_BUST=20260814-location-1
+ARG NLE_CACHE_BUST=20260814-schedule-test1
 RUN echo "NLE cache bust: $NLE_CACHE_BUST"
-# Cache bust: Gen2 local location/timezone override 0.0.14
+# Test build: HA target + schedule temperature sensors
 #COPY server/pyproject.toml server/README.md ./
 #COPY server/src ./src
-RUN git clone --depth 1 --branch main https://github.com/fbarwell/NoLongerEvil-SelfHosted.git . \
+RUN git clone --depth 1 --branch feature/ha-schedule-sensors https://github.com/fbarwell/NoLongerEvil-SelfHosted.git . \
     && pip3 install --no-cache-dir --break-system-packages .
 
 # Copy run script and set up data directory

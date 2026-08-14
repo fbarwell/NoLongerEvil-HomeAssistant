@@ -7,6 +7,9 @@ bashio::log.info "Starting NoLongerEvil Add-on..."
 DEBUG_LOGGING=$(bashio::config 'debug_logging')
 ENTRY_KEY_TTL_SECONDS=$(bashio::config 'entry_key_ttl_seconds')
 REQUIRE_DEVICE_PAIRING=$(bashio::config 'require_device_pairing')
+POSTAL_CODE=$(bashio::config 'postal_code')
+COUNTRY_CODE=$(bashio::config 'country_code')
+TIME_ZONE=$(bashio::config 'time_zone')
 
 # Container always listens on these ports
 SERVER_PORT=8000
@@ -93,6 +96,9 @@ export CONTROL_PORT
 export ENTRY_KEY_TTL_SECONDS
 export DEBUG_LOGGING
 export REQUIRE_DEVICE_PAIRING
+export POSTAL_CODE
+export COUNTRY_CODE
+export TIME_ZONE
 export DEBUG_LOGS_DIR=/data/debug-logs
 export SQLITE3_DB_PATH=/data/database.sqlite
 
@@ -102,6 +108,9 @@ bashio::log.info "  SERVER_PORT: ${SERVER_PORT} (device API)"
 bashio::log.info "  CONTROL_PORT: ${CONTROL_PORT} (control API + web UI)"
 bashio::log.info "  DEBUG_LOGGING: ${DEBUG_LOGGING}"
 bashio::log.info "  REQUIRE_DEVICE_PAIRING: ${REQUIRE_DEVICE_PAIRING}"
+if bashio::var.has_value "${POSTAL_CODE}"; then
+    bashio::log.info "  LOCATION: ${POSTAL_CODE}, ${COUNTRY_CODE} (${TIME_ZONE})"
+fi
 bashio::log.info "  MQTT_HOST: ${MQTT_HOST}"
 bashio::log.info "  MQTT_PORT: ${MQTT_PORT}"
 bashio::log.info ""

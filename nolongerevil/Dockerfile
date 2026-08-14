@@ -7,9 +7,9 @@ RUN apk add --no-cache python3 py3-pip git
 
 # Build Python server
 WORKDIR /server
-ARG NLE_CACHE_BUST=20260813-1
+ARG NLE_CACHE_BUST=20260814-location-1
 RUN echo "NLE cache bust: $NLE_CACHE_BUST"
-# Cache bust: Gen2 v3 timestamp acknowledgement test 0.0.9
+# Cache bust: Gen2 local location/timezone override 0.0.14
 #COPY server/pyproject.toml server/README.md ./
 #COPY server/src ./src
 RUN git clone --depth 1 --branch main https://github.com/fbarwell/NoLongerEvil-SelfHosted.git . \
